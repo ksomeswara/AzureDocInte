@@ -3,6 +3,7 @@ import json
 from flask import Flask, request, jsonify
 import requests
 import fitz  # PyMuPDF
+
 app = Flask(__name__)
 
 # Replace these with your Azure Document Intelligence endpoint and API key
@@ -20,7 +21,7 @@ def send_to_azure(page_data):
         response = requests.post(url, headers=headers, data=page_data)
         response.raise_for_status()  # Will raise an exception for HTTP errors
 
-        # Check for 202 Accepted response, indicating asynchronous processing
+        # Check for 202 Accepted response, indicating asynchronous processing add it the poll Url List
         if response.status_code == 202:
             poll_url = response.headers.get("Operation-Location")
             return {"poll_url": poll_url}
