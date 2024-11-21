@@ -27,6 +27,11 @@ poll_url_list=[]
 UPLOAD_FOLDER = '/tmp/Submissions'  # Change to the directory you want on the VM
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
+
+
+@app.route('/testServer', methods=['get'])
+def test_server():
+    return  {"Status": "Active"},200
 @app.route('/uploadSubmissions', methods=['POST'])
 def upload_file():
     if 'file' not in request.files:
