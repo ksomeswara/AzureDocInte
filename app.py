@@ -10,7 +10,6 @@ app = Flask(__name__)
 
 # Replace these with your Azure Document Intelligence endpoint and API key
 AZURE_ENDPOINT = "https://docintprudhvi.cognitiveservices.azure.com/"
-API_KEY = "C5MpFIwSPmkCZcWhOc65a753bQmoCtNeF9m8TfTD8IhXTAzZ3oi7JQQJ99AKACYeBjFXJ3w3AAALACOGfgpD"
 
 chat = OpenAIChat()
 model = "gpt-4o-mini"
